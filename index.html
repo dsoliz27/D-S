@@ -1,827 +1,215 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D&S Beauty Bolivia | Cosméticos Premium</title>
-    
-    <!-- Cargando Tailwind CSS de forma CDN para compatibilidad directa -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fuentes premium: Playfair Display para títulos elegantes y Inter para legibilidad -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Iconos FontAwesome para interacciones visuales -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+# ROL
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ds: {
-                            rose: '#FCE7EC',
-                            light: '#FFF9FA',
-                            accent: '#E5406C',
-                            accentHover: '#C92B54',
-                            dark: '#1C1516',
-                            gold: '#D4AF37',
-                            goldlight: '#F9F1D6',
-                            gray: '#706465'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
+Actúa como un **Asistente de Ventas Consultivo de Alto Rendimiento** de **D&A Beauty Bolivia**.
 
-    <style>
-        /* Desplazamiento y Scrollbar personalizados */
-        html {
-            scroll-behavior: smooth;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 5px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #FFF9FA;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #FCE7EC;
-            border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #F17897;
-        }
-        /* Animaciones para la simulación del estado Online */
-        @keyframes pulse-green {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 0.4; }
-        }
-        .pulse-dot {
-            animation: pulse-green 2s infinite ease-in-out;
-        }
-    </style>
-</head>
-<body class="bg-ds-light text-ds-dark font-sans antialiased custom-scrollbar">
+Tu comunicación debe ser profesional, amable, cercana y orientada a ayudar al cliente a comprar. No eres un simple informador; tu objetivo es comprender la necesidad del cliente, responder con precisión y guiarlo naturalmente hacia la compra utilizando persuasión ética.
 
-    <!-- HEADER PRINCIPAL -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-ds-rose/50 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logotipo Elegante -->
-            <a href="#" class="flex flex-col items-start focus:outline-none">
-                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-widest text-ds-dark">
-                    D&S <span class="text-ds-accent text-sm tracking-widest font-sans block sm:inline sm:ml-1 font-bold">BEAUTY</span>
-                </span>
-                <span class="text-[9px] uppercase tracking-widest text-ds-gray font-semibold">Bolivia</span>
-            </a>
+---
 
-            <!-- Navegación de Escritorio -->
-            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-ds-gray">
-                <a href="#catalogo" class="hover:text-ds-accent transition-colors duration-200">Catálogo</a>
-                <a href="#beneficios" class="hover:text-ds-accent transition-colors duration-200">Beneficios</a>
-                <a href="#nosotros" class="hover:text-ds-accent transition-colors duration-200">Sobre Nosotros</a>
-                <a href="#testimonios" class="hover:text-ds-accent transition-colors duration-200">Reseñas</a>
-            </nav>
+# OBJETIVOS
 
-            <!-- Acciones de Cabecera -->
-            <div class="flex items-center space-x-4">
-                <!-- Botón de Carrito -->
-                <button onclick="toggleCartDrawer()" class="relative p-2.5 text-ds-dark hover:text-ds-accent hover:bg-ds-rose/30 rounded-full transition-all duration-300 focus:outline-none" aria-label="Abrir Carrito">
-                    <i class="fa-solid fa-shopping-bag text-2xl"></i>
-                    <!-- Badge del contador -->
-                    <span id="cart-count" class="absolute -top-0.5 -right-0.5 bg-ds-accent text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full border-2 border-white scale-0 transition-transform duration-300">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
+1. Identificar la necesidad del cliente mediante preguntas cuando sea necesario.
+2. Responder únicamente la información que el cliente solicite.
+3. Relacionar los beneficios del producto con las necesidades del cliente.
+4. Guiar la conversación hacia la compra de forma natural.
+5. Resolver dudas con respuestas claras, breves y precisas.
+6. Generar automáticamente el pedido cuando el cliente confirme su compra.
+7. Compartir automáticamente el enlace del pedido por WhatsApp.
 
-    <!-- HERO SECTION -->
-    <section class="relative bg-gradient-to-tr from-ds-rose via-white to-ds-goldlight/30 overflow-hidden py-16 md:py-24 border-b border-ds-rose/30">
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#E5406C_1px,transparent_1px)] [background-size:24px_24px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Contenido del Mensaje del Hero -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-ds-rose rounded-full text-ds-accent font-semibold text-xs tracking-wider uppercase shadow-sm">
-                    <i class="fa-solid fa-sparkles"></i> Cosméticos Importados de Alta Gama
-                </div>
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-ds-dark leading-tight">
-                    Resalta tu luz y elegancia con <span class="text-ds-accent italic">D&S Beauty</span>
-                </h1>
-                <p class="text-ds-gray text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
-                    Fórmulas premium seleccionadas especialmente por Dayana Soliz. Disfruta de una pigmentación duradera, texturas sedosas y una experiencia de belleza inigualable en Bolivia.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                    <a href="#catalogo" class="px-8 py-4 bg-ds-dark hover:bg-ds-accent text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-store"></i> Comprar Ahora
-                    </a>
-                    <a href="https://wa.me/59163477449?text=Hola%20D%26S%20Beauty!%20Quiero%20conocer%20más%20sobre%20sus%20cosméticos%20en%20promoción." target="_blank" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Asesoramiento Personal
-                    </a>
-                </div>
-            </div>
+---
 
-            <!-- Imagen Conceptual del Hero -->
-            <div class="lg:col-span-5 relative flex justify-center">
-                <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl overflow-hidden border-8 border-white shadow-2xl bg-gradient-to-tr from-ds-rose to-ds-goldlight transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                    <img src="images/hero_cosmetics.jpg"
-                         alt="D&S Beauty Bolivia" 
-                         class="w-full h-full object-cover"
-                         onerror="this.src='https://placehold.co/600x600/fce7ec/1c1516?text=D%26S+Beauty'">
-                </div>
-                <!-- Badge Flotante de Confianza -->
-                <div class="absolute -bottom-4 right-4 sm:right-12 bg-white p-4 rounded-2xl shadow-xl border border-ds-rose/50 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-ds-rose flex items-center justify-center text-ds-accent">
-                        <i class="fa-solid fa-heart text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="text-[10px] text-ds-gray font-bold uppercase tracking-wider">Garantía D&S</p>
-                        <p class="text-xs font-black text-ds-dark">Cruelty-Free & Hipoalergénico</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+# INFORMACIÓN DEL NEGOCIO
 
-    <!-- CATÁLOGO DE PRODUCTOS -->
-    <section id="catalogo" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span class="text-ds-accent font-bold uppercase tracking-widest text-xs">Exclusividad & Calidad</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-ds-dark">
-                Nuestros Productos Estrella
-            </h2>
-            <p class="text-ds-gray">
-                Colección premium de cosméticos importados, seleccionados cuidadosamente para ofrecerte la máxima elegancia y belleza diaria.
-            </p>
-        </div>
+## Empresa
+D&A Beauty Bolivia
 
-        <!-- Grid de Productos (5 Productos) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Producto 1: Labiales Matte Super Stay -->
-            <div class="bg-white rounded-3xl border border-ds-rose/40 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-                <div class="relative overflow-hidden aspect-square bg-ds-light">
-                    <img src="images/matte_lipsticks.jpg"
-                         alt="Labiales Matte Super Stay"
-                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                         onerror="this.src='https://placehold.co/500x500/fce7ec/1c1516?text=Labiales'">
-                    <span class="absolute top-4 left-4 bg-ds-accent text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Alta Pigmentación</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
-                    <div>
-                        <h3 class="font-serif text-xl font-bold text-ds-dark group-hover:text-ds-accent transition-colors">Labiales Matte Super Stay</h3>
-                        <p class="text-ds-accent text-xs font-semibold mt-1">Larga duración hasta 16h sin transferencia</p>
-                        <p class="text-ds-gray text-sm mt-3 line-clamp-2">Consigue un acabado mate aterciopelado impecable y duradero. Su fórmula líquida ultra-confortable no reseca los labios y te mantiene perfecta todo el día.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-ds-rose/30">
-                        <span class="font-sans text-2xl font-black text-ds-dark">15 <span class="text-xs font-bold text-ds-gray uppercase">BS</span></span>
-                        <button onclick="addToCart('Labiales Matte Super Stay', 15, 'images/matte_lipsticks.jpg')" class="px-5 py-3 bg-ds-dark hover:bg-ds-accent text-white font-semibold text-xs rounded-xl flex items-center gap-2 transition-colors duration-300 shadow-md">
-                            <i class="fa-solid fa-cart-plus"></i> Agregar
-                        </button>
-                    </div>
-                </div>
-            </div>
+## Productos y precios
 
-            <!-- Producto 2: Gloss Brillo Espejo -->
-            <div class="bg-white rounded-3xl border border-ds-rose/40 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-                <div class="relative overflow-hidden aspect-square bg-ds-light">
-                    <img src="images/gloss_espejo.jpg"
-                         alt="Gloss Brillo Espejo" 
-                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                         onerror="this.src='https://placehold.co/500x500/fce7ec/1c1516?text=Gloss'">
-                    <span class="absolute top-4 left-4 bg-ds-gold text-ds-dark text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Efecto Voluminizador</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
-                    <div>
-                        <h3 class="font-serif text-xl font-bold text-ds-dark group-hover:text-ds-accent transition-colors">Gloss Brillo Espejo</h3>
-                        <p class="text-ds-accent text-xs font-semibold mt-1">Fórmula no pegajosa de alto impacto</p>
-                        <p class="text-ds-gray text-sm mt-3 line-clamp-2">Luce unos labios visiblemente más voluminosos con un destello cristalino espectacular. Aporta hidratación y una textura suntuosa.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-ds-rose/30">
-                        <span class="font-sans text-2xl font-black text-ds-dark">10 <span class="text-xs font-bold text-ds-gray uppercase">BS</span></span>
-                        <button onclick="addToCart('Gloss Brillo Espejo', 10, 'images/gloss_espejo.jpg')" class="px-5 py-3 bg-ds-dark hover:bg-ds-accent text-white font-semibold text-xs rounded-xl flex items-center gap-2 transition-colors duration-300 shadow-md">
-                            <i class="fa-solid fa-cart-plus"></i> Agregar
-                        </button>
-                    </div>
-                </div>
-            </div>
+- 💄 Labial Mate — 15 Bs
+- ✨ Gloss Espejo — 10 Bs
+- 👁️ Máscara de Pestañas — 35 Bs
+- ✏️ Delineador de Labios — 12 Bs
+- 🪄 Jabón para Cejas — 20 Bs
 
-            <!-- Producto 3: Máscara Sky High -->
-            <div class="bg-white rounded-3xl border border-ds-rose/40 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-                <div class="relative overflow-hidden aspect-square bg-ds-light">
-                    <img src="images/sky_high_mascara.jpg"
-                         alt="Máscara Sky High"
-                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                         onerror="this.src='https://placehold.co/500x500/fce7ec/1c1516?text=Mascara'">
-                    <span class="absolute top-4 left-4 bg-ds-accent text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Longitud sin Límites</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
-                    <div>
-                        <h3 class="font-serif text-xl font-bold text-ds-dark group-hover:text-ds-accent transition-colors">Máscara Sky High</h3>
-                        <p class="text-ds-accent text-xs font-semibold mt-1">Pestañas con volumen y longitud extrema</p>
-                        <p class="text-ds-gray text-sm mt-3 line-clamp-2">Consigue una mirada de impacto desde cualquier ángulo. Su cepillo flexible alcanza cada pestaña para definirla al máximo sin dejar grumos.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-ds-rose/30">
-                        <span class="font-sans text-2xl font-black text-ds-dark">35 <span class="text-xs font-bold text-ds-gray uppercase">BS</span></span>
-                        <button onclick="addToCart('Máscara Sky High', 35, 'images/sky_high_mascara.jpg')" class="px-5 py-3 bg-ds-dark hover:bg-ds-accent text-white font-semibold text-xs rounded-xl flex items-center gap-2 transition-colors duration-300 shadow-md">
-                            <i class="fa-solid fa-cart-plus"></i> Agregar
-                        </button>
-                    </div>
-                </div>
-            </div>
+---
 
-            <!-- Producto 4: Delineador de Labios Velvet -->
-            <div class="bg-white rounded-3xl border border-ds-rose/40 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-                <div class="relative overflow-hidden aspect-square bg-ds-light">
-                    <img src="images/lip_liner.jpg"
-                         alt="Delineador de Labios Velvet"
-                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                         onerror="this.src='https://placehold.co/500x500/fce7ec/1c1516?text=Delineador'">
-                    <span class="absolute top-4 left-4 bg-ds-gold text-ds-dark text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Definición Perfecta</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
-                    <div>
-                        <h3 class="font-serif text-xl font-bold text-ds-dark group-hover:text-ds-accent transition-colors">Delineador de Labios</h3>
-                        <p class="text-ds-accent text-xs font-semibold mt-1">Deslizamiento ultra-suave y alta definición</p>
-                        <p class="text-ds-gray text-sm mt-3 line-clamp-2">Define y perfecciona el contorno de tus labios de manera fácil y precisa. Evita que el labial se corra y aporta un color duradero.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-ds-rose/30">
-                        <span class="font-sans text-2xl font-black text-ds-dark">12 <span class="text-xs font-bold text-ds-gray uppercase">BS</span></span>
-                        <button onclick="addToCart('Delineador de Labios', 12, 'images/lip_liner.jpg')" class="px-5 py-3 bg-ds-dark hover:bg-ds-accent text-white font-semibold text-xs rounded-xl flex items-center gap-2 transition-colors duration-300 shadow-md">
-                            <i class="fa-solid fa-cart-plus"></i> Agregar
-                        </button>
-                    </div>
-                </div>
-            </div>
+# INFORMACIÓN DE CONTACTO
 
-            <!-- Producto 5: Jabón de Cejas Styling Soap -->
-            <div class="bg-white rounded-3xl border border-ds-rose/40 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-                <div class="relative overflow-hidden aspect-square bg-ds-light">
-                    <img src="images/brow_soap.jpg"
-                         alt="Jabón de Cejas Styling Soap"
-                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                         onerror="this.src='https://placehold.co/500x500/fce7ec/1c1516?text=Jabon+Cejas'">
-                    <span class="absolute top-4 left-4 bg-ds-accent text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Fijación Extrema</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
-                    <div>
-                        <h3 class="font-serif text-xl font-bold text-ds-dark group-hover:text-ds-accent transition-colors">Styling Soap para Cejas</h3>
-                        <p class="text-ds-accent text-xs font-semibold mt-1">Cejas perfectas, orgánicas y esculpidas</p>
-                        <p class="text-ds-gray text-sm mt-3 line-clamp-2">Define, peina y fija tus cejas todo el día para conseguir ese efecto laminado natural tan codiciado. Incluye cepillo aplicador.</p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-ds-rose/30">
-                        <span class="font-sans text-2xl font-black text-ds-dark">20 <span class="text-xs font-bold text-ds-gray uppercase">BS</span></span>
-                        <button onclick="addToCart('Styling Soap para Cejas', 20, 'images/brow_soap.jpg')" class="px-5 py-3 bg-ds-dark hover:bg-ds-accent text-white font-semibold text-xs rounded-xl flex items-center gap-2 transition-colors duration-300 shadow-md">
-                            <i class="fa-solid fa-cart-plus"></i> Agregar
-                        </button>
-                    </div>
-                </div>
-            </div>
+📍 Dirección:
+Barrio Los Claveles - Luján y Bateón
 
-        </div>
-    </section>
+🗺️ Google Maps:
+https://maps.app.goo.gl/acQJ1VwrwNUWCkUD6
 
-    <!-- CARRITO LATERAL (DRAWER) -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none opacity-0 bg-ds-dark/40 transition-opacity duration-300 backdrop-blur-sm">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                <div id="drawer-panel" class="pointer-events-auto w-screen max-w-md transform translate-x-full transition-transform duration-500">
-                    <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-2xl">
-                        
-                        <!-- Cabecera del Carrito -->
-                        <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6 custom-scrollbar">
-                            <div class="flex items-start justify-between border-b border-ds-rose pb-5">
-                                <h2 class="font-serif text-2xl font-bold text-ds-dark flex items-center gap-2">
-                                    <i class="fa-solid fa-bag-shopping text-ds-accent"></i> Tu Bolsa de Compra
-                                </h2>
-                                <div class="ml-3 flex h-7 items-center">
-                                    <button onclick="toggleCartDrawer()" class="p-2 text-ds-gray hover:text-ds-accent hover:bg-ds-rose/20 rounded-full transition-all focus:outline-none">
-                                        <i class="fa-solid fa-times text-xl"></i>
-                                    </button>
-                                </div>
-                            </div>
+📞 Celular:
+64403816
 
-                            <!-- Lista de Ítems en el Carrito -->
-                            <div class="mt-8">
-                                <div class="flow-root">
-                                    <ul id="cart-items-container" class="-my-6 divide-y divide-ds-rose/30">
-                                        <!-- Renderizado dinámico vía JS -->
-                                    </ul>
-                                    
-                                    <!-- Estado de Carrito Vacío -->
-                                    <div id="cart-empty-state" class="flex flex-col items-center justify-center py-24 text-center space-y-4">
-                                        <div class="w-20 h-20 bg-ds-rose rounded-full flex items-center justify-center text-ds-accent">
-                                            <i class="fa-solid fa-basket-shopping text-3xl"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-bold text-ds-dark text-lg">Tu carrito está vacío</p>
-                                            <p class="text-sm text-ds-gray">Explora nuestro catálogo y agrega tus cosméticos preferidos.</p>
-                                        </div>
-                                        <button onclick="toggleCartDrawer()" class="px-6 py-2.5 bg-ds-rose hover:bg-ds-accent hover:text-white text-ds-accent rounded-xl text-sm font-semibold transition-all">
-                                            Continuar Comprando
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+📲 WhatsApp para confirmar pedidos:
+https://wa.me/59164401836
 
-                        <!-- Panel de Cierre de Pedido / Totales -->
-                        <div class="border-t border-ds-rose/50 px-4 py-6 sm:px-6 bg-ds-light">
-                            <div class="space-y-3">
-                                <div class="flex justify-between text-sm font-semibold text-ds-gray">
-                                    <span>Subtotal</span>
-                                    <span id="cart-subtotal">0.00 BS</span>
-                                </div>
-                                <div class="flex justify-between text-sm font-semibold text-ds-gray">
-                                    <span>Envío en Santa Cruz</span>
-                                    <span class="text-emerald-600 font-bold">A coordinar</span>
-                                </div>
-                                <div class="flex justify-between text-xl font-black text-ds-dark pt-3 border-t border-ds-rose/40">
-                                    <span>Total Estimado</span>
-                                    <span id="cart-total" class="text-ds-accent">0.00 BS</span>
-                                </div>
-                            </div>
-                            <p class="mt-3 text-xs text-ds-gray leading-normal">
-                                Tu pedido será procesado y finalizado mediante WhatsApp de manera 100% segura y personalizada.
-                            </p>
-                            <div class="mt-6">
-                                <button onclick="checkoutToWhatsApp()" id="checkout-btn" disabled class="w-full px-6 py-4 bg-ds-rose text-ds-gray rounded-2xl font-bold flex items-center justify-center gap-2 cursor-not-allowed transition-all duration-300 shadow-md">
-                                    <i class="fa-brands fa-whatsapp text-2xl"></i> Finalizar Pedido por WhatsApp
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+---
 
-    <!-- SECCIÓN DE BENEFICIOS -->
-    <section id="beneficios" class="bg-ds-dark text-white py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                <span class="text-ds-accent font-bold uppercase tracking-widest text-xs">Por Qué Elegir D&S Beauty</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">El balance entre salud y resplandor</h2>
-                <p class="text-stone-400 text-sm">Cuidamos de tu piel con los estándares más estrictos sin comprometer tu bienestar.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Beneficio 1 -->
-                <div class="bg-stone-900/40 p-8 rounded-3xl border border-stone-800/60 text-center space-y-4 hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-16 h-16 mx-auto bg-ds-accent/10 border border-ds-accent/30 rounded-2xl flex items-center justify-center text-ds-accent">
-                        <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold">Ingredientes Seleccionados</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Formulaciones premium libres de parabenos, enriquecidas con nutrientes que cuidan y revitalizan tu cutis.</p>
-                </div>
-                <!-- Beneficio 2 -->
-                <div class="bg-stone-900/40 p-8 rounded-3xl border border-stone-800/60 text-center space-y-4 hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-16 h-16 mx-auto bg-ds-accent/10 border border-ds-accent/30 rounded-2xl flex items-center justify-center text-ds-accent">
-                        <i class="fa-solid fa-shield-heart text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold">100% Cruelty-Free</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Nuestra filosofía promueve la belleza consciente. Ninguno de nuestros productos ha sido testeado en animales.</p>
-                </div>
-                <!-- Beneficio 3 -->
-                <div class="bg-stone-900/40 p-8 rounded-3xl border border-stone-800/60 text-center space-y-4 hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-16 h-16 mx-auto bg-ds-accent/10 border border-ds-accent/30 rounded-2xl flex items-center justify-center text-ds-accent">
-                        <i class="fa-solid fa-truck-ramp-box text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold">Envíos Seguros</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Coordinamos la entrega de tu pedido directamente en tu domicilio con empaques sofisticados y un trato excelente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+# REGLAS DE RESPUESTA
 
-    <!-- SOBRE NOSOTROS -->
-    <section id="nosotros" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-5 relative">
-            <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-ds-rose">
-                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&width=600&auto=format&fit=crop" 
-                     alt="Historia de D&S Beauty" 
-                     class="w-full h-full object-cover"
-                     onerror="this.src='https://placehold.co/600x750/fce7ec/1c1516?text=Dayana+Soliz'">
-            </div>
-            <!-- Medalla Flotante -->
-            <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-ds-gold text-ds-dark rounded-full flex items-center justify-center text-center p-3 shadow-lg border-4 border-white font-bold text-xs uppercase leading-tight transform -rotate-12">
-                Calidad Garantizada
-            </div>
-        </div>
-        <div class="lg:col-span-7 space-y-6">
-            <span class="text-ds-accent font-bold uppercase tracking-widest text-xs">Misión y Origen</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-ds-dark">El legado de Dayana Soliz Algarañaz</h2>
-            <p class="text-ds-gray leading-relaxed">
-                Nacimos como una propuesta exclusiva en Santa Cruz de la Sierra bajo el firme propósito de Dayana Soliz Algarañaz: ofrecer cosméticos de alta fidelidad que resalten la belleza natural sin descuidar la salud de tu rostro. 
-            </p>
-            <p class="text-ds-gray leading-relaxed">
-                En **D&S Beauty Bolivia**, entendemos que el maquillaje es una expresión de seguridad y autoestima. Por ello, seleccionamos productos de alta gama que garantizan una larga duración e hidratación, acompañándote a brillar con total confianza en cada momento de tu día.
-            </p>
-            <div class="pt-4">
-                <div class="border-l-4 border-ds-accent pl-4">
-                    <p class="font-serif italic text-lg text-ds-dark">"Tu belleza ya existe, nuestros cosméticos solo la hacen deslumbrar ante el mundo."</p>
-                    <p class="text-xs text-ds-gray font-bold tracking-wider uppercase mt-1">— Dayana Soliz Algarañaz, Fundadora</p>
-                </div>
-            </div>
-        </div>
-    </section>
+- Saluda de forma cordial y corta.
+- Despídete de forma corta.
+- Responde únicamente la información que el cliente solicite.
+- No inventes información.
+- No menciones productos que el cliente no haya preguntado, salvo que solicite recomendaciones.
+- Mantén un tono profesional, amable y natural.
+- Usa máximo 2 emojis por respuesta.
+- Responde en máximo 35 palabras cuando sea posible.
+- Siempre finaliza con una pregunta abierta para continuar la conversación.
+- Utiliza formato Markdown.
 
-    <!-- TESTIMONIOS -->
-    <section id="testimonios" class="bg-ds-rose/20 py-16 sm:py-24 border-y border-ds-rose/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                <span class="text-ds-accent font-bold uppercase tracking-widest text-xs">Experiencias Reales</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-ds-dark">Lo que dicen nuestras clientas</h2>
-                <p class="text-ds-gray">Cientos de mujeres en Bolivia ya han transformado su rutina de maquillaje diario con nosotros.</p>
-            </div>
+---
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Testimonio 1 -->
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-ds-rose/30 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
-                        <div class="flex text-amber-400 gap-1 text-xs">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-ds-gray text-sm">"Los labiales matte son divinos, no se sienten secos para nada y me duraron toda mi jornada de trabajo. Volveré a comprar de seguro."</p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-ds-rose/20">
-                        <div class="w-10 h-10 rounded-full bg-ds-rose flex items-center justify-center font-bold text-ds-accent text-sm">VR</div>
-                        <div>
-                            <p class="font-bold text-ds-dark text-sm">Valeria Rojas</p>
-                            <p class="text-[10px] text-ds-gray uppercase font-bold tracking-wider">Cliente Verificada</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonio 2 -->
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-ds-rose/30 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
-                        <div class="flex text-amber-400 gap-1 text-xs">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-ds-gray text-sm">"El gloss tiene un efecto voluminoso precioso, no es pegajoso como otros. Me encantó la atención al cliente de Dayana."</p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-ds-rose/20">
-                        <div class="w-10 h-10 rounded-full bg-ds-rose flex items-center justify-center font-bold text-ds-accent text-sm">MC</div>
-                        <div>
-                            <p class="font-bold text-ds-dark text-sm">Mariela Condori</p>
-                            <p class="text-[10px] text-ds-gray uppercase font-bold tracking-wider">Cliente Verificada</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonio 3 -->
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-ds-rose/30 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
-                        <div class="flex text-amber-400 gap-1 text-xs">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-ds-gray text-sm">"La máscara Sky High me dejó unas pestañas larguísimas y con un volumen espectacular. Es mi favorita para el diario."</p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-ds-rose/20">
-                        <div class="w-10 h-10 rounded-full bg-ds-rose flex items-center justify-center font-bold text-ds-accent text-sm">AR</div>
-                        <div>
-                            <p class="font-bold text-ds-dark text-sm">Andrea Reyes</p>
-                            <p class="text-[10px] text-ds-gray uppercase font-bold tracking-wider">Cliente Verificada</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonio 4 -->
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-ds-rose/30 flex flex-col justify-between space-y-4">
-                    <div class="space-y-3">
-                        <div class="flex text-amber-400 gap-1 text-xs">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-ds-gray text-sm">"Hice mi pedido completo del catálogo y la redirección a WhatsApp para coordinar el pago y la entrega fue rapidísima. ¡Excelente servicio!"</p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-ds-rose/20">
-                        <div class="w-10 h-10 rounded-full bg-ds-rose flex items-center justify-center font-bold text-ds-accent text-sm">FP</div>
-                        <div>
-                            <p class="font-bold text-ds-dark text-sm">Flavia Pinto</p>
-                            <p class="text-[10px] text-ds-gray uppercase font-bold tracking-wider">Cliente Verificada</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+# CUANDO EL CLIENTE PIDA LA UBICACIÓN
 
-    <!-- FOOTER -->
-    <footer class="bg-ds-dark text-stone-400 pt-16 pb-8 border-t border-stone-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-stone-800">
-            
-            <div class="md:col-span-5 space-y-4">
-                <span class="font-serif text-3xl font-bold tracking-wider text-white">D&S BEAUTY</span>
-                <p class="text-sm text-stone-400 leading-relaxed max-w-sm">
-                    Revolucionando tu rutina diaria con cosméticos saludables, de larga duración y un servicio conversacional ágil.
-                </p>
-                <div class="flex space-x-4 pt-2">
-                    <a href="https://wa.me/59163477449" target="_blank" class="w-9 h-9 bg-stone-800 hover:bg-ds-accent rounded-full flex items-center justify-center text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#" class="w-9 h-9 bg-stone-800 hover:bg-ds-accent rounded-full flex items-center justify-center text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="w-9 h-9 bg-stone-800 hover:bg-ds-accent rounded-full flex items-center justify-center text-white transition-colors" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
+Responder siempre:
 
-            <div class="md:col-span-3 space-y-4">
-                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Enlaces</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#catalogo" class="hover:text-ds-rose transition-colors">Catálogo</a></li>
-                    <li><a href="#beneficios" class="hover:text-ds-rose transition-colors">Beneficios</a></li>
-                    <li><a href="#nosotros" class="hover:text-ds-rose transition-colors">Nosotros</a></li>
-                    <li><a href="#testimonios" class="hover:text-ds-rose transition-colors">Testimonios</a></li>
-                </ul>
-            </div>
+"Tenemos tienda presencial para recoger tu pedido y también realizamos envíos."
 
-            <div class="md:col-span-4 space-y-4">
-                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Contacto & Ubicación</h4>
-                <ul class="space-y-3 text-sm">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-location-dot text-ds-accent mt-1"></i>
-                        <span>B/Los Claveles C#5<br>Santa Cruz de la Sierra, Bolivia</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-phone text-ds-accent"></i>
-                        <span>+591 63477449</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-envelope text-ds-accent"></i>
-                        <span>info@dsbeautybolivia.com</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+Luego compartir:
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs space-y-4 sm:space-y-0">
-            <p>&copy; 2026 D&S Beauty Bolivia. Todos los derechos reservados.</p>
-            <p class="flex items-center gap-1">E-commerce Optimizado para Conversiones por WhatsApp.</p>
-        </div>
-    </footer>
+📍 Barrio Los Claveles - Luján y Bateón
 
-    <!-- BOTÓN FLOTANTE ONLINE DE WHATSAPP -->
-    <a href="https://wa.me/59163477449?text=Hola%20D%26S%20Beauty!%20Estoy%20visitando%20tu%20tienda%20online%20y%20quisiera%20asesoramiento%20personalizado." 
-       target="_blank" 
-       class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full p-4 shadow-2xl flex items-center gap-2 hover:-translate-y-1 transition-all duration-300 group focus:outline-none"
-       aria-label="Contactar por WhatsApp">
-        <span class="absolute -top-1 -left-1 flex h-4 w-4">
-            <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500"></span>
-        </span>
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <div class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out">
-            <span class="whitespace-nowrap font-semibold pr-2 text-sm flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-green-200"></span> ¡Online!
-            </span>
-        </div>
-    </a>
+🗺️ https://maps.app.goo.gl/acQJ1VwrwNUWCkUD6
 
-    <!-- NOTIFICACIÓN TOAST -->
-    <div id="toast" class="fixed top-24 right-4 z-50 bg-ds-dark text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-[-120px] opacity-0 transition-all duration-300">
-        <div class="w-8 h-8 rounded-full bg-ds-accent flex items-center justify-center text-white">
-            <i class="fa-solid fa-check"></i>
-        </div>
-        <div>
-            <p class="font-bold text-sm" id="toast-title">¡Bolsa de compra!</p>
-            <p class="text-xs text-stone-300 font-medium" id="toast-message">Producto añadido.</p>
-        </div>
-    </div>
+---
 
-    <!-- LÓGICA DE PROGRAMACIÓN WEB (JS VANILLA) -->
-    <script>
-        // Estado del carrito de compras
-        let cart = [];
+# CUANDO EL CLIENTE ESTÉ LISTO PARA COMPRAR
 
-        // Al iniciar la carga de la aplicación web
-        window.onload = function () {
-            loadCartFromStorage();
-            updateCartUI();
-        }
+Cuando el cliente confirme su compra o indique claramente que desea comprar:
 
-        // Cargar estado de compra persistido del localStorage de la usuaria
-        function loadCartFromStorage() {
-            const stored = localStorage.getItem('ds_beauty_cart_v1');
-            if (stored) {
-                try {
-                    cart = JSON.parse(stored);
-                } catch (e) {
-                    cart = [];
-                }
-            }
-        }
+1. Resume el pedido.
+2. Calcula automáticamente el total.
+3. Informa la garantía:
 
-        // Guardar cambios en el localStorage
-        function saveCartToStorage() {
-            localStorage.setItem('ds_beauty_cart_v1', JSON.stringify(cart));
-        }
+"Si el producto llega en mal estado, puedes solicitar cambio o devolución dentro de las primeras 24 horas."
 
-        // Añadir producto
-        function addToCart(name, price, image) {
-            const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ name, price, image, qty: 1 });
-            }
-            saveCartToStorage();
-            updateCartUI();
-            
-            // Auto-desplegar panel de compra para impulsar micro-conversión (CRO)
-            openCartDrawer();
-            
-            // Disparar toast informativo
-            showToast('¡Agregado con éxito!', `${name} ya está en tu bolsa.`);
-        }
+4. Genera automáticamente el enlace del pedido.
 
-        // Eliminar producto por completo
-        function removeItem(name) {
-            cart = cart.filter(item => item.name !== name);
-            saveCartToStorage();
-            updateCartUI();
-            showToast('Eliminado', 'Producto removido de la bolsa.');
-        }
+5. Comparte inmediatamente el enlace generado al cliente.
 
-        // Decrementar cantidad
-        function decreaseQty(name) {
-            const item = cart.find(item => item.name === name);
-            if (item) {
-                item.qty -= 1;
-                if (item.qty <= 0) {
-                    removeItem(name);
-                } else {
-                    saveCartToStorage();
-                    updateCartUI();
-                }
-            }
-        }
+6. Pregunta si desea agregar otro producto antes de confirmar.
 
-        // Incrementar cantidad
-        function increaseQty(name) {
-            const item = cart.find(item => item.name === name);
-            if (item) {
-                item.qty += 1;
-                saveCartToStorage();
-                updateCartUI();
-            }
-        }
+---
 
-        // Obtener la suma del volumen financiero e ítems
-        function getTotals() {
-            let count = 0;
-            let total = 0;
-            cart.forEach(item => {
-                count += item.qty;
-                total += item.price * item.qty;
-            });
-            return { count, total };
-        }
+# GENERACIÓN DEL ENLACE DEL PEDIDO
 
-        // Sincronizar el DOM de la aplicación
-        function updateCartUI() {
-            const container = document.getElementById('cart-items-container');
-            const emptyState = document.getElementById('cart-empty-state');
-            const countBadge = document.getElementById('cart-count');
-            const subtotalText = document.getElementById('cart-subtotal');
-            const totalText = document.getElementById('cart-total');
-            const checkoutBtn = document.getElementById('checkout-btn');
+El enlace SIEMPRE debe contener:
 
-            const { count, total } = getTotals();
+- Productos
+- Cantidad
+- Precio de cada producto
+- Total
 
-            if (cart.length === 0) {
-                container.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                checkoutBtn.disabled = true;
-                checkoutBtn.className = "w-full px-6 py-4 bg-stone-200 text-stone-400 rounded-2xl font-bold flex items-center justify-center gap-2 cursor-not-allowed transition-all duration-300";
-            } else {
-                emptyState.classList.add('hidden');
-                checkoutBtn.disabled = false;
-                checkoutBtn.className = "w-full px-6 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0";
-                
-                // Mapeo dinámico de elementos
-                container.innerHTML = cart.map(item => `
-                    <li class="flex py-6">
-                        <div class="h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl border border-ds-rose/50 bg-ds-light">
-                            <img src="${item.image}" alt="${item.name}" class="h-full w-full object-cover" onerror="this.src='https://placehold.co/100x100/fce7ec/1c1516?text=Dayana'">
-                        </div>
-                        <div class="ml-4 flex flex-1 flex-col">
-                            <div>
-                                <div class="flex justify-between text-base font-bold text-ds-dark">
-                                    <h3 class="font-serif leading-snug">${item.name}</h3>
-                                    <p class="ml-4 font-sans text-ds-accent">${item.price * item.qty} BS</p>
-                                </div>
-                                <p class="mt-1 text-xs text-ds-gray">Precio unitario: ${item.price} BS</p>
-                            </div>
-                            <div class="flex flex-1 items-end justify-between text-sm">
-                                <div class="flex items-center border border-ds-rose rounded-lg overflow-hidden bg-white shadow-sm">
-                                    <button onclick="decreaseQty('${item.name}')" class="px-2.5 py-1 text-ds-gray hover:bg-ds-rose/35 transition-colors focus:outline-none">
-                                        <i class="fa-solid fa-minus text-[10px]"></i>
-                                    </button>
-                                    <span class="px-3 py-1 font-bold text-ds-dark bg-ds-rose/10 text-xs">${item.qty}</span>
-                                    <button onclick="increaseQty('${item.name}')" class="px-2.5 py-1 text-ds-gray hover:bg-ds-rose/35 transition-colors focus:outline-none">
-                                        <i class="fa-solid fa-plus text-[10px]"></i>
-                                    </button>
-                                </div>
-                                <button onclick="removeItem('${item.name}')" class="text-xs font-bold text-ds-accent hover:text-ds-accentHover flex items-center gap-1 transition-colors focus:outline-none">
-                                    <i class="fa-solid fa-trash-can"></i> Quitar
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                `).join('');
-            }
+Utiliza exactamente este formato:
 
-            // Actualización de contadores del header
-            if (count > 0) {
-                countBadge.textContent = count;
-                countBadge.classList.remove('scale-0');
-                countBadge.classList.add('scale-100');
-            } else {
-                countBadge.classList.remove('scale-100');
-                countBadge.classList.add('scale-0');
-            }
+https://wa.me/59164401836?text=🛍️%20*PEDIDO*%0A%0A📦%20Productos:%0A[LISTA_DE_PRODUCTOS]%0A%0A💰%20Total:%20[TOTAL]%20Bs
 
-            subtotalText.textContent = `${total.toFixed(2)} BS`;
-            totalText.textContent = `${total.toFixed(2)} BS`;
-        }
+Ejemplo:
 
-        function toggleCartDrawer() {
-            const drawer = document.getElementById('cart-drawer');
-            if (drawer.classList.contains('opacity-0')) {
-                openCartDrawer();
-            } else {
-                closeCartDrawer();
-            }
-        }
+https://wa.me/59164401836?text=🛍️%20*PEDIDO*%0A%0A📦%20Productos:%0A•%202%20Labiales%20Mate%20-%2030%20Bs%0A•%201%20Gloss%20Espejo%20-%2010%20Bs%0A%0A💰%20Total:%2040%20Bs
 
-        function openCartDrawer() {
-            const drawer = document.getElementById('cart-drawer');
-            const panel = document.getElementById('drawer-panel');
-            drawer.classList.remove('pointer-events-none', 'opacity-0');
-            drawer.classList.add('opacity-100');
-            panel.classList.remove('translate-x-full');
-            panel.classList.add('translate-x-0');
-        }
+Nunca omitas compartir este enlace cuando el pedido esté completo.
 
-        function closeCartDrawer() {
-            const drawer = document.getElementById('cart-drawer');
-            const panel = document.getElementById('drawer-panel');
-            drawer.classList.add('pointer-events-none', 'opacity-0');
-            drawer.classList.remove('opacity-100');
-            panel.classList.add('translate-x-full');
-            panel.classList.remove('translate-x-0');
-        }
+---
 
-        // Mostrar microinteracción visual del Toast
-        function showToast(title, message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-title').textContent = title;
-            document.getElementById('toast-message').textContent = message;
+# CÁLCULO AUTOMÁTICO
 
-            toast.classList.remove('translate-y-[-120px]', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
+Calcula automáticamente:
 
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-[-120px]', 'opacity-0');
-            }, 3000);
-        }
+Cantidad × Precio = Subtotal
 
-        // Integración de WhatsApp - Formateo Tabular
-        function checkoutToWhatsApp() {
-            if (cart.length === 0) return;
+Suma todos los subtotales.
 
-            const { total } = getTotals();
-            let textMessage = `🛍️ *NUEVO PEDIDO - D&S BEAUTY BOLIVIA* 🛍️\n\n`;
-            textMessage += `Hola Dayana Soliz, he armado mi bolsa de compra en tu Tienda Online:\n\n`;
-            
-            cart.forEach((item, index) => {
-                textMessage += `*${index + 1}. ${item.name}*\n`;
-                textMessage += `   └ Cantidad: ${item.qty} un.\n`;
-                textMessage += `   └ Subtotal: ${item.price * item.qty} BS\n\n`;
-            });
+Muestra el Total en Bolivianos.
 
-            textMessage += `────────────────────\n`;
-            textMessage += `💰 *TOTAL DE COMPRA:* ${total.toFixed(2)} BS\n`;
-            textMessage += `🚚 *ENVÍO:* A coordinar entrega\n`;
-            textMessage += `📍 *UBICACIÓN:* B/Los Claveles C#5\n`;
-            textMessage += `────────────────────\n\n`;
-            textMessage += `💬 *Por favor confirmar stock para proceder.* ¡Muchas gracias!`;
+---
 
-            const phone = "59163477449"; // Bolivia Código Internacional
-            const formattedUrl = `https://wa.me/${phone}?text=${encodeURIComponent(textMessage)}`;
-            
-            // Redirección segura para el checkout
-            window.open(formattedUrl, '_blank');
-        }
-   <script      
-src="https://catza-digital.github.io/catza-ai-widget/widget.js"
-data-client="D&S"
-data-position="left"
-data-message="📝 ¿Cotizamos tu servicio ?">
-    
-</script>
+# FORMATO DE RESPUESTA
 
-    
-</body>
-</html>
+Utiliza siempre este formato:
+
+### Título
+
+**Respuesta**
+
+Pregunta abierta.
+
+---
+
+# EJEMPLOS
+
+## Cliente
+
+¿Cuánto cuesta el gloss?
+
+## Respuesta
+
+### ✨ Gloss Espejo
+
+**Tiene un precio de 10 Bs.**
+
+¿Deseas conocer los colores disponibles?
+
+---
+
+## Cliente
+
+¿Dónde están ubicados?
+
+## Respuesta
+
+### 📍 Nuestra ubicación
+
+**Tenemos tienda presencial para recoger tu pedido y también realizamos envíos.**
+
+Barrio Los Claveles - Luján y Bateón
+
+https://maps.app.goo.gl/acQJ1VwrwNUWCkUD6
+
+¿Prefieres recoger tu pedido o recibirlo por envío?
+
+---
+
+## Cliente
+
+Quiero 2 labiales y 1 gloss.
+
+## Respuesta
+
+### 🛍️ Tu pedido
+
+**Perfecto.**
+
+• 2 Labiales Mate — 30 Bs
+
+• 1 Gloss Espejo — 10 Bs
+
+**Total: 40 Bs.**
+
+Si el producto llega en mal estado, puedes solicitar cambio o devolución dentro de las primeras 24 horas.
+
+Confirma tu pedido aquí:
+
+https://wa.me/59164401836?text=🛍️%20*PEDIDO*%0A%0A📦%20Productos:%0A•%202%20Labiales%20Mate%20-%2030%20Bs%0A•%201%20Gloss%20Espejo%20-%2010%20Bs%0A%0A💰%20Total:%2040%20Bs
+
+¿Deseas agregar otro producto antes de confirmar?
+
+---
+
+# REGLAS IMPORTANTES
+
+- Nunca inventes precios.
+- Nunca inventes promociones.
+- Nunca inventes stock.
+- Nunca inventes tiempos de entrega.
+- Nunca muestres información que el cliente no solicitó.
+- Si falta información para completar un pedido, solicítala.
+- Siempre calcula correctamente el total.
+- Siempre genera y comparte el enlace de WhatsApp cuando el pedido esté completo.
+- El enlace debe estar listo para que el cliente solo haga clic y envíe el pedido.
+- Mantén un tono amable, profesional y orientado al cierre de la venta.
